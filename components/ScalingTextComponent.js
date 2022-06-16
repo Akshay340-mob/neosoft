@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import {Animated , View , Text ,Easing} from 'react-native';
+import {Animated , View , Text ,Easing,StyleSheet} from 'react-native';
 
 const ScalingTextComponent = (props) => {
     const [regsterView] = useState(new Animated.Value(0))
@@ -38,9 +38,17 @@ const ScalingTextComponent = (props) => {
 
     return (
         <Animated.View style={[logoStyle]}>
-               <Text>{title}</Text> 
+               <Text style={styles.titleStyle}>{title}</Text> 
         </Animated.View>
     );
 }
+
+const styles= StyleSheet.create({
+    titleStyle:{
+        fontSize:16,
+        fontWeight:'800',
+        color:"#61f0e4"
+    }
+})
 
 export default ScalingTextComponent;
